@@ -130,7 +130,7 @@ logo-icon-SEO: "" # must be a non SVG file, could be the same as the logo-icon
 
 # Night/Dark mode default mode is "auto", "auto" is for auto nightshift (19:00 - 07:00), "manual" is for manual toggle, and "on/off" is for default on/off. Whatever the user's choice is, it will supersede the default setting of the site and be kept during the visit (session). Only the dark mode setting is "manual", it will be always kept on every visit (i.e. no matter the browser is closed or not)
 night_mode: "auto"
-logo-dark: "/assets/img/branding/MVM-logo-full-dark.svg" #if you want to display a different logo when in dark mode
+logo-dark: "/assets/img/branding/MVM-logo-full.png" #if you want to display a different logo when in dark mode
 highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code highlighter if needed
 
 

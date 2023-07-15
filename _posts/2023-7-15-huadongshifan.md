@@ -19,6 +19,7 @@ toc: yes # leave empty or erase for no TOC
 
 目前为止，整个博客构建的较为仓促，后期会对其进行补充和美化，并一直记录。下面我将从5个方面介绍此项目：
 
+
 ### 博客主题的选取
 
 - Jekyll框架
@@ -29,6 +30,7 @@ toc: yes # leave empty or erase for no TOC
 - 参考链接
     - [源主题地址：Jekyll theme: Adam Blog 2.0](https://github.com/the-mvm/the-mvm.github.io)
     - [学习教程：B站-基于 GitHub Pages 和 Jekyll 搭建个人博客的简单心得](https://www.bilibili.com/video/BV14x411t7ZU/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=d676acebe888563dfe01749d7eb1144f)
+
 
 ### 博客页面布局
 
@@ -50,12 +52,45 @@ toc: yes # leave empty or erase for no TOC
     ![other](./assets/img/posts/20230715/other.png)
     ![com](./assets/img/posts/20230715/com.png)
 - 移动端
+    ![phone](./assets/img/posts/20230715/phone.jpg)
+
 
 ### 博客功能实现
 
+- 分页
+  - 通过 Jekyll 中的分页插件实现主界面中文章的分页功能，这里设置六篇文章为一页。使用 ”jekyll install paginator“ 进行下载。
+  - 根据当前页面是否由前一个或后一个进行自动的变化。
+  - ![pages](./assets/img/posts/20230715/pages.png)
+- 搜索
+  - 这里可以通过关键字，对文章标题和文章内容进行检索。
+- 标签
+  - 除了对文章根据标题进行展示外，同时通过在文章页面的开头使用 "tags: \[ 学习笔记]" 为每个文章添加标签。此时可以根据标签对文章进行搜索。这里举例以证据学习查询，可以看到
+  - ![e1](./assets/img/posts/20230715/e1.png)
+  - ![e2](./assets/img/posts/20230715/e2.png)
+- 评论
+  - 使用 GitHub APPs 中的 utterances 实现评论功能
+  - ```javascript
+  # Comments
+  comments: utteranc  #[disqus, utteranc]
+  comments_opts:
+  comments_curtain: yes # leave empty to show the disqus embed directly
+  repo: lizhez/lizhez.github.io # The GitHub repo URL.  https://utteranc.es/
+  issue_term: title # The GitHub issue label
+  theme: github-light # The GitHub comment's there. e.g. github-dark
+  ```
 
 ### 博客制作过程中遇到的问题
 
+1. 参考资料相对较少
+
+    相较于大型 web开发 框架（如 SpringBoot）网上存在大量资源和教程不同，Jekyll由于其轻量、简单的特点，从环境配置安装到使用，网络上系统化的学习资料很少。因此主要是根据实战视频，来了解 Jekyll 框架的结构和功能，并通过实际上手，来观察具体操作会影响到页面上什么内容的改变。
+2. LaTeX公式书写的复杂度
+
+    之前在记录学习笔记时，为了简单快速，很多都是直接截屏处理。而此尝试使用 LaTeX公式 的书写，来美化文章页面。由于时间问题，只在其中一个页面 [理解狄利克雷](https://lizhez.github.io/Dirichlet.html) 使用。
+
+
 ### 总结
 
-经过此次实践过程，
+经过此次实践过程，新学习了一项新的技术，同时完成了个人博客的搭建。这不仅仅是一项实践任务，同时也是一项可以实际使用的功能，向外提供了交流和学习的途径。
+
+当前博客还有很多不足，计划在后续增加分类、播放等其他功能，继续完善。
