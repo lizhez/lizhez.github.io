@@ -3,162 +3,92 @@
 [   
       
   {
-  "tag" : "artificial intelligence",
+  "tag" : "Beta",
   "posts" : [
       
-      "./AI-and-intellectual-property.html",
-      
-      "./back-to-basics.html",
-      
-      "./deep-q-learning-tic-tac-toe.html"
+      "./Dirichlet.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "coding",
+  "tag" : "Dirichlet",
   "posts" : [
       
-      "./deep-q-learning-tic-tac-toe.html",
-      
-      "./neural-network-optimization-methods.html",
-      
-      "./ML-Library-from-scratch.html",
-      
-      "./conways-game-of-life.html",
-      
-      "./single-neuron-perceptron.html"
+      "./Dirichlet.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "copyright",
+  "tag" : "学习笔记",
   "posts" : [
       
-      "./AI-and-intellectual-property.html"
+      "./huadongshifan.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "creativity",
+  "tag" : "摄影",
   "posts" : [
       
-      "./AI-and-intellectual-property.html"
+      "./to-qingdao.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "deep Neural networks",
+  "tag" : "旅行",
   "posts" : [
       
-      "./neural-network-optimization-methods.html"
+      "./to-qingdao.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "general blogging",
+  "tag" : "机器学习",
   "posts" : [
       
-      "./starting-the-adventure.html"
+      "./Dirichlet.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "life",
+  "tag" : "海边",
   "posts" : [
       
-      "./starting-the-adventure.html"
+      "./to-qingdao.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "machine learning",
+  "tag" : "论文笔记",
   "posts" : [
       
-      "./AI-and-intellectual-property.html",
-      
-      "./back-to-basics.html",
-      
-      "./deep-q-learning-tic-tac-toe.html",
-      
-      "./neural-network-optimization-methods.html",
-      
-      "./ML-Library-from-scratch.html",
-      
-      "./single-neuron-perceptron.html"
+      "./evidential-deep-learning.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "neural networks",
+  "tag" : "证据学习",
   "posts" : [
       
-      "./AI-and-intellectual-property.html",
+      "./evidential-deep-learning.html",
       
-      "./back-to-basics.html",
-      
-      "./ML-Library-from-scratch.html",
-      
-      "./single-neuron-perceptron.html"
-      
-    ]
-  } ,
-    
-      
-  {
-  "tag" : "optimization",
-  "posts" : [
-      
-      "./neural-network-optimization-methods.html"
-      
-    ]
-  } ,
-    
-      
-  {
-  "tag" : "python",
-  "posts" : [
-      
-      "./deep-q-learning-tic-tac-toe.html",
-      
-      "./ML-Library-from-scratch.html",
-      
-      "./conways-game-of-life.html"
-      
-    ]
-  } ,
-    
-      
-  {
-  "tag" : "reinforcement learning",
-  "posts" : [
-      
-      "./deep-q-learning-tic-tac-toe.html"
-      
-    ]
-  } ,
-    
-      
-  {
-  "tag" : "thoughts",
-  "posts" : [
-      
-      "./starting-the-adventure.html"
+      "./Dirichlet.html"
       
     ]
   } 

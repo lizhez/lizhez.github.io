@@ -1,21 +1,13 @@
 {
   "posts" : [
     
-    "./AI-and-intellectual-property.html",
+    "./huadongshifan.html",
     
-    "./back-to-basics.html",
+    "./to-qingdao.html",
     
-    "./starting-the-adventure.html",
+    "./evidential-deep-learning.html",
     
-    "./deep-q-learning-tic-tac-toe.html",
-    
-    "./neural-network-optimization-methods.html",
-    
-    "./ML-Library-from-scratch.html",
-    
-    "./conways-game-of-life.html",
-    
-    "./single-neuron-perceptron.html"
+    "./Dirichlet.html"
     
   ]
 }
