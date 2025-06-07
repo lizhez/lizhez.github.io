@@ -539,7 +539,7 @@ svg {
 .wrapper {
   width: 960px;
   max-width: 90%;
-  margin: 0.75em auto 0.75em;
+  margin: 0 auto 0.75em;
   position: relative;
 }
 ::-moz-selection {
@@ -820,10 +820,10 @@ svg.menu-icon-house {
   padding: 0;
 }
 .post-card-box li {
-  position: relative;
+  /* position: relative; */
   list-style: none;
-  float: left;
-  width: 50%;
+  float: center;
+  width: 60%;
 }
 
 .post-card {

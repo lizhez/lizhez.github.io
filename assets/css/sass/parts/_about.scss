@@ -10,7 +10,7 @@
 
 .about-header {
   position: relative;
-  text-align: center;
+  text-align: left;
   padding-bottom: 30px;
   margin-bottom: 30px;
   &:after {
@@ -43,7 +43,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    text-align: center;
+    text-align: left;
     li {
       display: inline-block;
       margin-left: 10px;

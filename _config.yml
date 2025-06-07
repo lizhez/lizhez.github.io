@@ -1,14 +1,14 @@
 destination: docs
 
 # Site settings
-title: LIZHE'S BLOG
+title: Zhe Li | East China Normal University
 description: 'Artificial Intelligence trends and concepts made easy.' # this means to ignore newlines until "baseurl:"
 permalink: ':title:output_ext'
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://lizhez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 logo: "/assets/img/branding/MVM-logo-full.png"
 logo-icon: "/assets/img/branding/MVM-symbol.svg"
-logo-icon-SEO: "/assets/img/branding/MVM-symbol-black.png" # must be a non SVG file
+logo-icon-SEO: "/assets/img/Myself_Neon.jpg" # must be a non SVG file
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
@@ -27,8 +27,9 @@ highlight_theme: syntax-base16.monokai.dark # select a dark theme for the code h
 
 # Author settings
 author: 李哲 # add your name
-author-pic: Myself_Neon_grey.jpg
-about-author: 就读于山东大学，软件工程专业，大三年级。
+lab: Decision Intelligence Lab
+author-pic: Myself.jpg
+about-author: 就读于山东大学，软件工程专业，大三年级
   掌握SpringBoot+Vue+MyBatis框架前后端分离网页的开发。
   本科期间参与本校 iLearn 实验室作科研助理。主要是基于多模态的对话中情感识别任务。参与一篇论文写作，目前在投 2023ACM MM(三作)。
   喜欢摄影、手工，对生活抱以热情与喜爱。
@@ -36,7 +37,7 @@ author-msg: 软件工程，多模态对话情感识别
 
 # Contact links
 email: lizhe@mail.sdu.edu.cn # Add your Email address
-phone: 18348360307# Add your Phone number
+phone: 18348360307 # Add your Phone number
 website: https://lizhez.github.io # Add your website
 #linkedin: amaynez # Add your Linkedin handle
 github: lizhez # Add your Github handle
