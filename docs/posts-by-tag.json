@@ -3,92 +3,70 @@
 [   
       
   {
-  "tag" : "Beta",
+  "tag" : "Benchmark",
   "posts" : [
       
-      "./Dirichlet.html"
+      "./TSFM.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "Dirichlet",
+  "tag" : "Deep Learning",
   "posts" : [
       
-      "./Dirichlet.html"
+      "./Ocra.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "学习笔记",
+  "tag" : "Foundation Models",
   "posts" : [
       
-      "./huadongshifan.html"
+      "./TSFM.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "摄影",
+  "tag" : "LLM",
   "posts" : [
       
-      "./to-qingdao.html"
+      "./Ocra.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "旅行",
+  "tag" : "Ocean",
   "posts" : [
       
-      "./to-qingdao.html"
+      "./Ocra.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "机器学习",
+  "tag" : "Time Series Forecasting",
   "posts" : [
       
-      "./Dirichlet.html"
+      "./TSFM.html"
       
     ]
   } ,
     
       
   {
-  "tag" : "海边",
+  "tag" : "Wave Height",
   "posts" : [
       
-      "./to-qingdao.html"
-      
-    ]
-  } ,
-    
-      
-  {
-  "tag" : "论文笔记",
-  "posts" : [
-      
-      "./evidential-deep-learning.html"
-      
-    ]
-  } ,
-    
-      
-  {
-  "tag" : "证据学习",
-  "posts" : [
-      
-      "./evidential-deep-learning.html",
-      
-      "./Dirichlet.html"
+      "./Ocra.html"
       
     ]
   } 

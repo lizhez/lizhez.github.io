@@ -303,7 +303,7 @@
 		<div class="post">
 			
 
-			<a class="post-list-title" href="./huadongshifan.html">华东师范大学数据科学与工程学院暑期夏令营实践项目总结与反思</a>
+			<a class="post-list-title" href="./TSFM.html">TSFM-Bench: A Comprehensive and Unified Benchmark of Foundation Models for Time Series Forecasting</a>
 			
 
   <span class = "post-card-meta">
@@ -315,7 +315,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2023-07-15T00:00:00+08:00">July 15, 2023</time>
+        <time datetime="2025-06-08T00:00:00+08:00">June 8, 2025</time>
       </span>
     
     
@@ -335,14 +335,14 @@
   </span>
 
 			<div class="post-excerpt">
-				<p>在所给的四个项目中，经过仔细的考虑，选择完成【个人博客搭建】这个项目。其原因有一下三点：</p><ul> <li>首先，在比较了【关联时间序列】和【个人博客】的项目后，由于我未上手搭建过机器学习的模型，因此在14天的时间里是一个巨大的挑战。而本科期间，多项课程设计是有关网站系统的开发，选择【个人博客搭建】更加容易上手。</li> <li>其次，在我看来【个人博客】是一个很好的展示自己个人能力、兴趣爱好的媒介。而GitHub Pages提供的这种静态网页，可以在没有个人域名和服务器的情况下向外提供个人网站链接，是一个很好的工具。</li> <li>最后，我一直有过搭建个人博客来记录日常和学习的想法，但平时课程紧张，并没有来得及实现，而这次实践给了我一个合适的机会。</li></ul><p>目前为止，整个博客构建的较为仓促，后期会对其进行补充和美化，并一直记录。下面我将从5个方面介绍此项目：</p><h3 id="博客主题的选取">博客主题的选取</h3><ul> <li>Jekyll框架 <ul> <li>Jekyll ，是由 Ruby 编写的、快速、简洁且高效的静态网站生成引擎， 使用一个模板目录作为网站布局的基础框架，并且支持 Markdown、Textile 等标记语言的解析，同时可以直接在 GitHub Pages 上使用 Jekyll来进行个人博客的搭建。</li> <li>本次项目，选择 Jekyll 正是由于其简易而强大的布局，可以快速上手开始项目搭建。同时 Jekyll Themes 提供了大量的页面模板，可以进行美化。</li> </ul> </li> <li>模板选择 <ul> <li>选择 Jekyll theme: Adam Blog 2.0 为模板进行网页的开发。它提供了主页、所有文章、标签、关于我、文章详情5种页面的设计模板，界面简单整洁。</li> </ul> </li> <li>参考链接 <ul> <li><a href="https://github.com/the-mvm/the-mvm.github.io">源主题地址：Jekyll theme: Adam Blog 2.0</a></li> <li><a href="https://www.bilibili.com/video/BV14x411t7ZU/?spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=d676acebe888563dfe01749d7eb1144f">学习教程：B站-基于 GitHub Pages 和 Jekyll 搭建个人博客的简单心得</a></li> </ul> </li></ul><h3 id="博客页面布局">博客页面布局</h3><ul> <li>PC端 <ul> <li>主界面: 上方是页头，包括导航条按钮（默认关闭），博客标题，搜索按钮（可以点击以关键字搜索文章）。下方是文章列表和所有标签。最下方是页脚，包括关键的导航。<img src="./assets/img/posts/20230715/main.png" alt="主界面" /><img src="./assets/img/posts/20230715/search.png" alt="search" /></li> <li>导航: 通过点击页头左方三个横线的标志，可以展开导航栏。导航栏上方灯泡标志，控制页面的明亮或黑暗主题。<img src="./assets/img/posts/20230715/nav.png" alt="导航" /> <img src="./assets/img/posts/20230715/nav-dark.png" alt="导航-暗" /></li> <li>所有文章：展示所有文章列表，竖向排列。<img src="./assets/img/posts/20230715/all.png" alt="所有文章" /></li> <li>标签：根据文章标签展示文章。<img src="./assets/img/posts/20230715/tag.png" alt="标签" /></li> <li>关于我：个人简单介绍。<img src="./assets/img/posts/20230715/me.png" alt="me" /></li> <li>文章详情：文章详情页。中间的正文，左侧的标签，而部分页面会显示导航，以及分享的链接按钮，最下方包括其他文章，作者信息，评论。<img src="./assets/img/posts/20230715/detail.png" alt="detail" /><img src="./assets/img/posts/20230715/nags.png" alt="nags" /><img src="./assets/img/posts/20230715/other.png" alt="other" /><img src="./assets/img/posts/20230715/com.png" alt="com" /></li>...<a class="read-more" href="./huadongshifan.html"> read more</a>
+				<p>本文旨在介绍一项关于时间序列预测基础模型的benchmark研究。为了在多领域、多特征数据集上对多种时间序列预测基础模型进行全面统一的测评，华东师范大学联合丹麦奥尔堡大学开发了<strong>FoundTS</strong>，这一框架专门用于时间序列预测基础模型的系统测评。论文基于统一的评测结果，分析了现有时间序列预测基础模型的优势与不足，并提出了切实可行的改进方向，以推动基础模型性能的进一步提升。</p><div align="center"><img src="assets/img/posts/TSFM/title.png" width="90%" /></div><p><strong>论文地址</strong>： <a href="http://arxiv.org/abs/2410.11802">http://arxiv.org/abs/2410.11802</a></p><p>时间序列预测（Time Series Forecasting, TSF）是指利用历史观测数据来预测数据未来数据趋势，对于金融分析、气象预测、能源管理等多个领域具有至关重要的作用。</p><h3 id="背景">背景</h3><p>近年来，专门针对特定领域数据集进行训练的模型（Specific models）在预测精度和推理速度上取得了显著提升。然而，当这些模型遇到新的领域或数据时，其泛化能力往往受到限制，表现并不理想。与此相比，在多领域时间序列数据或大规模语言数据集上进行预训练的基础模型（Foundation models）为提高时间序列预测模型的泛化能力提供了新的研究路径，但对这类模型的理解和研究目前仍显不足，主要原因有以下三点：</p><ol> <li>现有时间序列预测基础模型的实验设置缺乏一致性，如表1所示，这导致基于当前结果很难对不同基础模型的性能进行公正且一致的比较；</li> <li>当前主流的时间序列预测的测评基准主要集中在特定模型上，很少关注基础模型；</li> <li>现有的涉及基础模型的测试基准多停留在定性分析或单一场景的评估上，缺乏对模型在不同场景下性能的综合定量分析。</li></ol><div align="center"><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">表 1：不同时间序列预测基础模型实验设置比较。</center><img src="assets/img/posts/TSFM/sample_setting.png" width="65%" /></div><p>为了应对上述挑战，这篇论文提出了一个新的测评基准——FoundTS，旨在为时间序列预测基础模型提供一个全面统一的测评平台。通过FoundTS，能够对不同模型在多领域、多特征数据集上的性能进行系统性的分析，从而为时间序列预测领域的研究和实践提供更加可靠的参考。</p><div align="center"><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">表 2：FoundTS 与其他时间序列预测基准的比较。</center><img src="assets/img/posts/TSFM/pipe.png" width="85%" /></div><h3 id="foundts-测评框架">FoundTS 测评框架</h3><p>FoundTS 提供了一个标准化的评估流程，包括数据（data）、模型（models）和评估（evaluation）三个核心模块，如图1所示。</p><div align="center"><img src="assets/img/posts/TSFM/architecture.png" width="100%" /><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图 1：FoundTS 架构。</center></div><ol> <li>数据模块涵盖了来自10个不同领域的时间序列数据集（Stock, Health, Energy, Electricity, Environment, Traffic, Nature, Banking, Web, Economics），这些数据集具有多种特征（Seasonality, Trend, Stationarity, Transition, Shifting, Correlation, Non-Gaussianity），为时间序列预测提供了全面的数据支持。</li> <li>模型模块将多个具有不同架构类型的时间序列预测模型分为三类： <ul> <li><strong>基于多领域时间序列数据的预训练模型</strong>，论文从重建、自回归、直接预测和混合预测四个角度介绍了这些模型；</li> <li><strong>基于大规模语言模型的预训练模型</strong>，通过参数高效的微调策略或精心设计的prompt，充分利用LLMs强大的表征能力和序列建模能力，捕捉时间序列数据中的复杂模式。</li> <li><strong>特定模型</strong>，这些模型在特定数据集上进行训练和推理，包括于CNN的模型、基于Transformer的模型、基于MLP的模型等。</li> </ul> </li> <li>评估模块提供了一个全面的测评场景、可扩展的流程和统一的评估环境： <ul> <li>包含zero-shot、few-shot 和 full-shot的测评场景，全面探索了时间序列预测基础模型在不同测试场景下的性能。</li> <li>支持灵活的选择回看窗口、预测窗口、数据划分与加载、采样策略，一致的实验设置更能确保测试结果的公平性和可靠性。</li> <li>提供多种评估指标，如平均绝对误差（MAE）和均方误差（MSE）等，可以从不同角度对时间序列预测基础模型进行详尽剖析。</li> </ul> </li></ol><h3 id="实验">实验</h3><h4 id="实验结果">实验结果</h4><p>论文在多个不同领域的数据集上对比了不同的时间序列预测基础模型以及端到端的特定模型在 zero-shot、few-shot 和 full-shot 场景下的性能表现。</p><div align="center"><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">表 3：zero-shot 设置下的实验结果。</center><img src="assets/img/posts/TSFM/zero.png" width="100%" /></div><div align="center"><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">表 4：采用 5% 数据对基础模型进行微调的 few-shot 设置下的实验结果。</center><img src="assets/img/posts/TSFM/few.png" width="100%" /></div><div align="center"><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">表 5：full-shot 设置下的实验结果。</center><img src="assets/img/posts/TSFM/full.png" width="65%"...<a class="read-more" href="./TSFM.html"> read more</a>
 			</div>
 		</div>
 	
 		<div class="post">
 			
 
-			<a class="post-list-title" href="./to-qingdao.html">等疫情结束就去趟海边吧</a>
+			<a class="post-list-title" href="./Ocra.html">Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models</a>
 			
 
   <span class = "post-card-meta">
@@ -354,7 +354,7 @@
     
       
       <span class="page_meta-date">
-        <time datetime="2023-04-10T21:32:20+08:00">April 10, 2023</time>
+        <time datetime="2024-08-01T00:00:00+08:00">August 1, 2024</time>
       </span>
     
     
@@ -366,7 +366,7 @@
     
     <span class="page_meta-readtime">
       
-        less than 1 minute read
+        1 minute read
       
     </span>
   
@@ -374,46 +374,7 @@
   </span>
 
 			<div class="post-excerpt">
-				<p>说到海边，我想到的就是阳光、沙滩、椰子，从日出坐到日落。</p><p>晒晒太阳，吹吹海风，看一盛大日出和日落。</p><p>但其实，海边也可以是礁石，鲜花和海风。</p><p>青岛的海是多变的。冬天，他凌冽而广阔，静谧的海面似乎蕴藏着巨大的谜团。春日，他温柔而清凉，海鸥盘旋在海的上空，仿佛一双温柔的手抚平心中的不安与焦虑。</p><h3 id="看海">看海</h3><p>在海边看着太阳缓缓从天边升起，一层金光逐渐洒向海面，慢慢拂上我的肩膀。清晨的海边是静悄悄的，阳光驱散黑暗的同时也仿佛带走了我们的疲惫。连夜赶路的困倦瞬间消失的无影无踪，这是大海带来的震撼与惊喜。<img src="./assets/img/posts/20230410/three.jpg" alt="看海" /></p><h3 id="奔跑">奔跑</h3><p>下午，从大学路到龙江路，向信号山公园走去。大学路的红墙黄瓦，龙江路的卡通墙绘，古风和动漫有了奇妙的结合。一路上车辆很少，我们奔跑在狭窄的马路上，是青春肆意的洒脱。<img src="./assets/img/posts/20230410/run.jpg" alt="奔跑" /></p><a class="read-more" href="./to-qingdao.html"> read more</a>
-			</div>
-		</div>
-	
-		<div class="post">
-			
-
-			<a class="post-list-title" href="./evidential-deep-learning.html">Evidential Deep Learning</a>
-			
-
-  <span class = "post-card-meta">
-  
-  
-    <span class="meta-pre"></span>
-  
-  
-    
-      
-      <span class="page_meta-date">
-        <time datetime="2022-12-12T00:00:00+08:00">December 12, 2022</time>
-      </span>
-    
-    
-      <span class="meta-sep"></span>
-    
-  
-  
-    
-    
-    <span class="page_meta-readtime">
-      
-        less than 1 minute read
-      
-    </span>
-  
-  
-  </span>
-
-			<div class="post-excerpt">
-				<h3 id="问题">问题</h3><ul> <li>由于标准方法是训练网络以使预测损失最小化，模型对其预测置信度一无所知。</li> <li>已有的<strong>方式：</strong>通过权重不确定性间接推断预测不确定性的贝叶斯神经网络</li> <li><strong>提出：</strong>使用主观逻辑理论（SL）的显式建模。在类概率上放置狄利克雷分布，将神经网络的预测视为主观意见。学习从数据中收集导致这些意见的确定性神经网络的证据的函数。</li> <li><strong>Softmax存在的问题：</strong>夸大预测类别的概率，结果是不可靠的不确定性估计。（预测的标签的距离除了与其他类别的比较值外，对结论没有用处）<img src="./assets/img/posts/20221212/cite.png" alt="举例" /></li></ul><h3 id="理论说明">理论说明</h3><ul> <li> <p><strong>Subjective Logic (SL)主观逻辑</strong>，为每个单例提供 可信度 bk 考虑 K 个互斥单例(类标签)，并提供总体不确定性u。</p> <p><img src="./assets/img/posts/20221212/1.png" alt="Untitled" /></p> <ul> <li> <p>可信度 bk 由单例的证据 ek 计算。设 ek≥0 为第 k 个单例的证据，可信度 bk 和不确定性 u 计算为</p> <p><img src="./assets/img/posts/20221212/2.png" alt="Untitled" /></p> <p><img src="./assets/img/posts/20221212/3.png" alt="Untitled" /></p> </li> <li> <p>不确定性与总证据成反比</p> <ul> <li>当没有证据时，每个单例的信度为0，不确定性为1。</li> <li><strong>证据</strong>是从数据中收集的支持量的度量，用以支持将样本分类到某个类别。</li> <li><strong>可信度</strong>（主观意见），对应于 参数αk = ek + 1的狄利克雷分布</li> <li>bk = (αk−1)/S，从相应的狄利克雷分布的参数中得到主观意见，S =∑k αi被称为狄利克雷强度</li> <li> <p><img src="./assets/img/posts/20221212/4.png" alt="Untitled" /></p> </li> <li><img src="./assets/img/posts/20221212/5.png" alt="Untitled" /></li> </ul> </li> </ul> </li> <li>举例 <ul> <li>假设b = &lt; 0，…， 0 &gt;为10类分类问题的可信度分配。则对图像进行分类的先验分布变为均匀分布，即D(p; &lt; 1，…， 1 &gt;) 参数均为1的狄利克雷分布。简单说就是因为没有观察到的证据，所以可信度都是零。不包含任何信息，意味着完全不确定性，即u = 1。</li> <li>经过一些训练，让可信度变为 b = &lt; 0.8, 0，…，0 &gt;。这意味着对观点的总信任度（∑bk）是0.8，剩下的0.2是不确定性（u）。狄利克雷强度计算为 S...<a class="read-more" href="./evidential-deep-learning.html"> read more</a>
+				<p>本文介绍决策智能实验室和河口海岸国重合作的AI4Ocean的工作——海洋有效波高估计。</p><!-- 图片：论文的标题+作者截个图（类似下面这个截图 - 要用CMR后的）![外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传](https://img-home.csdnimg.cn/images/20230724024159.png?origin_url=image.png&pos_id=img-7AD8Ld1I-1721204799122) --><h3 id="ocean-significant-wave-height-estimation-with-spatio-temporally-aware-large-language-models">Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models</h3><p><strong>作者：</strong> 李哲， 徐榕荟， 胡吉林， 彭忠， 卢玺， 郭晨娟， 杨彬</p><p><strong>关键词：</strong> 海洋有效波高预测， 大语言模型， 提示微调</p><!-- **论文链接：** **代码链接：** --><p><strong>摘要：</strong> 有效波高（SWH）是海洋科学中的一个重要指标，可以显著反应海洋波浪变化，对全海域SWH进行准确估算是至关重要的。传统数值模型在处理SWH估算任务中虽然具备成熟理论基础，但存在计算效率低下和难以进一步提高的问题。虽然，机器学习技术为解决上述问题提供新的可能性，但由于有限的观测技术和高昂的观测成本，实际观测到的海洋数据的严重稀缺，限制了机器学习模型的潜力。因此，我们提出了一个海洋SWH估算框架（Orca）。具体来说，Orca通过所设计的提示模板实现LLM在SWH估算任务上的迁移，使用一种新的时空感知编码模块增强了传统大语言模型（LLM）的时空推理能力。最终通过大量实验证明了Orca在SWH估算中取得了SOAT且高效的性能。</p><h2 id="1-引言">1. 引言</h2><p>有效波高（Significant Wave Height, SWH）是海洋科学中的一个重要指标，反映了海洋活动的状态。异常波浪会对人类社会和自然环境造成严重破坏，包括生产损失、人员伤亡和生态损害等。因此对海洋SWH的准确估算关系到各类海上活动的安全，如海上导航、渔业运输和海洋能源开发等。</p><p>目前SWH估算的方法主要分为两类：<strong>传统的数值模型</strong>方法和<strong>基于机器学习的方法</strong>。数值模型基于物理学理论构建，通过利用观测数据推演海洋波浪的所有变化实现对全海域SWH的估算。经过多年的研究积累，数值模型已经具备坚实的理论基础和准确性。但对海洋波浪变化的所有可能性的推演往往需要大量计算资源，且难以适应新的影响因素，模型性能过于依赖物理理论。因此，基于机器学习的方法已经成为一种很有前途的替代方法，在SWH估算中提供了更好的准确性和更少的计算时间。然而，同时也面临着两个主要的挑战：一方面，实际观测的SWH数据过于稀疏。由于观测技术、观测环境以及观测成本的限制，海洋中实际部署的观测浮标非常稀少，如图1显示了墨西哥湾浮标的分布。这种稀缺性阻碍了基于机器学习的方法的发展。另一方面，波浪的产生是不同方向多种力的相互作用，因此波的变化具有很强的时空相关性，但目前基于机器学习的方法未能捕捉到如此复杂的关系。</p><div align="center">&lt;img src="assets/img/posts/Orca/f1.png" width=50%&gt;</div><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1：墨西哥湾的浮标分布。浮标所在的网格为红色的</center><p>为了解决上述两个挑战，我们提出了一个海洋SWH估算框架——Orca。具体来说，首先，由于大型语言模型（Large Language Model, LLM）在不同领域小样本场景下展现出了强大的泛化能力，我们以LLM作为模型主干，通过特定的提示模板和嵌入模块实现LLM的迁移，解决SWH估算中的数据稀疏性问题。其次，为了增强LLM的时空推理能力，我们将基于浮标的数据分割成重叠的补丁，通过一种新的时空编码模块捕捉海洋波浪的时空信息。同时，我们通过正则化项增加数值模型的物理知识对模型估算的约束。Orca整合了数值模型和机器学习模型的优点，弥补了LLM时空推理能力的不足，为海洋SWH估算提供新的方向。</p><p>综上所述，我们在本文中做出以下贡献：</p><ul> <li>Orca是第一个将LLM引入海洋SWH估算的模型。</li> <li>我们设计了一个特定的提示模板和提示嵌入模块，通过有限数据对LLM进行微调，解决了数据稀疏问题。</li> <li>我们提出了一种新的时空感知编码模块，补足了LLM的时空推理能力。</li> <li>进行了大量的实验，证明了Orca的计算效率和准确性。</li></ul><h2 id="2-定义">2. 定义</h2><ul> <li> <p><em>有效波高（SWH）：</em> 在给定区域的一组波中，最高1/3波浪的平均高度。</p> </li> <li> <p><em>基于浮标的数据：</em> $M$个固定在不同位置的浮标在$T$个连续时间间隔中收集到的$F$种观测变量序列，记作$\mathbf{X} \in \mathbb{R}^{F \times M \times T}$。</p> </li> <li> <p><em>基于网格的有效波高（GSWH）：</em> $T$个连续时间间隔内每个网格区域内的平均SWH，记作$\mathbf{Y}\in \mathbb{R}^{K \times J \times T}$，其中$K$和$J$分别表示行数和列数。</p> </li> <li> <p><strong>问题定义</strong> 给定在$T$个连续时间间隔的基于浮标的数据X，估算对应时间的GSWH值$Y$。</p> </li></ul><h2 id="3-方法">3. 方法</h2><p>图2给出了Orca的总体架构。模型一共包含三个模块：提示编码模块、时空感知编码模块、大语言模型。具体来说，设计提示模板，描述大语言模型扮演角色、任务目标、数据格式等信息，为大语言模型在此任务上的微调进行精确的方向定位；将一定时间段的浮标数据作为输入，通过时空感知编码模块学习浮标数据的时空表征；而对于大语言模型本身，冻结包含了大量预训练知识的前馈层和注意力机制模块的参数，只对输入表征的位置编码层的参数进行训练，通过线性层将大语言模型最后的隐藏层的输出映射为预测目标。</p><div align="center"><img src="assets/img/posts/Orca/f2.png" /></div><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图2：Orca总体架构</center><h3 id="31-提示编码模块">3.1 提示编码模块</h3><p>为了指导LLM准确地理解数据，我们将提示符分割成五个不同的组件，如图2所示：ACTOR指定LLM的角色；INFORMATION定义输入数据的维度；TARGET明确说明任务目标；FEATURES指定输入数据的特征，如风向（WDIR）；DATA声明输入数据的类型，确保LLM准确地解释数值，而不是将它们误认为字符串。</p><p>使用LLM的词嵌入层对输入的结构化提示$P={p_1, p_2, \ldots, p_E}$进行编码，得到$\mathbf{P}={\mathbf{p}_1, \mathbf{p}_2, \ldots, \mathbf{p}_E}$。同时，随机生成固定数量的软提示$Q={q_1, q_2, \ldots, q_R}$，并使用预训练的词嵌入层对其进行编码得到$\mathbf{Q}={\mathbf{q}_1, \mathbf{q}_2, \ldots, \mathbf{q}_R}$，然后输入到一个可训练的提示编码器中，来建模不同嵌入之间的依赖关系：</p><div align="center">&lt;img src="assets/img/posts/Orca/f3.png" width=28%&gt;</div><p>最后，我们将$\mathbf{H}<em>q$和$\mathbf{P}$拼接起来，以提高提示对样本的适应性，得到最终的提示$\mathbf{H}</em>{prompt}=[\mathbf{H}_q; \mathbf{P}] \in\mathbb{R}^{(R+E)\times...<a class="read-more" href="./Ocra.html"> read more</a>
 			</div>
 		</div>
 	
