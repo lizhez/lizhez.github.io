@@ -22,7 +22,7 @@
   "headline": "Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models",
   "abstract": "时空感知的大语言模型在海洋显著波高估计中的应用",
     "keywords": "LLM, Ocean, Wave Height, Deep Learning",
-    "wordcount": "222",
+    "wordcount": "189",
     "image": ["http://localhost:4000/assets/imgposts/20240801/f2.png"],
   "datePublished": "2024-08-01 00:00:00 +0800",
   "dateModified": "2024-08-01 00:00:00 +0800",
@@ -62,7 +62,7 @@
 <meta name="twitter:description" content="时空感知的大语言模型在海洋显著波高估计中的应用">
 <meta name="twitter:creator" content="">
 <meta data-rh="true" name="twitter:label1" content="Word count"/>
-<meta data-rh="true" name="twitter:data1" content="222"/>
+<meta data-rh="true" name="twitter:data1" content="189"/>
 <meta name="twitter:image:src" content="http://localhost:4000/assets/img/posts/20240801/f2.png">
 	<!-- Windows Phone -->
 	<meta name="msapplication-navbutton-color" content="#311e3e">
@@ -163,7 +163,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        less than 1 minute read
       
     </span>
   
@@ -171,7 +171,7 @@
   </span>
 
         <div class="post-excerpt">
-            <p>本文介绍决策智能实验室和河口海岸国重合作的AI4Ocean的工作——海洋有效波高估计。</p><!-- 图片：论文的标题+作者截个图（类似下面这个截图 - 要用CMR后的）![外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传](https://img-home.csdnimg.cn/images/20230724024159.png?origin_url=image.png&pos_id=img-7AD8Ld1I-1721204799122) --><h3 id="ocean-significant-wave-height-estimation-with-spatio-temporally-aware-large-language-models">Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models</h3><p><strong>作者：</strong> 李哲， 徐榕荟， 胡吉林， 彭忠， 卢玺， 郭晨娟， 杨彬</p><p><strong>关键词：</strong> 海洋有效波高预测， 大语言模型， 提示微调</p><!-- **论文链接：** **代码链接：** --><p><strong>摘要：</strong> 有效波高（SWH）是海洋科学中的一个重要指标，可以显著反应海洋波浪变化，对全海域SWH进行准确估算是至关重要的。传统数值模型在处理SWH估算任务中虽然具备成熟理论基础，但存在计算效率低下和难以进一步提高的问题。虽然，机器学习技术为解决上述问题提供新的可能性，但由于有限的观测技术和高昂的观测成本，实际观测到的海洋数据的严重稀缺，限制了机器学习模型的潜力。因此，我们提出了一个海洋SWH估算框架（Orca）。具体来说，Orca通过所设计的提示模板实现LLM在SWH估算任务上的迁移，使用一种新的时空感知编码模块增强了传统大语言模型（LLM）的时空推理能力。最终通过大量实验证明了Orca在SWH估算中取得了SOAT且高效的性能。</p><h2 id="1-引言">1. 引言</h2><p>有效波高（Significant Wave Height, SWH）是海洋科学中的一个重要指标，反映了海洋活动的状态。异常波浪会对人类社会和自然环境造成严重破坏，包括生产损失、人员伤亡和生态损害等。因此对海洋SWH的准确估算关系到各类海上活动的安全，如海上导航、渔业运输和海洋能源开发等。</p><p>目前SWH估算的方法主要分为两类：<strong>传统的数值模型</strong>方法和<strong>基于机器学习的方法</strong>。数值模型基于物理学理论构建，通过利用观测数据推演海洋波浪的所有变化实现对全海域SWH的估算。经过多年的研究积累，数值模型已经具备坚实的理论基础和准确性。但对海洋波浪变化的所有可能性的推演往往需要大量计算资源，且难以适应新的影响因素，模型性能过于依赖物理理论。因此，基于机器学习的方法已经成为一种很有前途的替代方法，在SWH估算中提供了更好的准确性和更少的计算时间。然而，同时也面临着两个主要的挑战：一方面，实际观测的SWH数据过于稀疏。由于观测技术、观测环境以及观测成本的限制，海洋中实际部署的观测浮标非常稀少，如图1显示了墨西哥湾浮标的分布。这种稀缺性阻碍了基于机器学习的方法的发展。另一方面，波浪的产生是不同方向多种力的相互作用，因此波的变化具有很强的时空相关性，但目前基于机器学习的方法未能捕捉到如此复杂的关系。</p><div align="center">&lt;img src="assets/img/posts/Orca/f1.png" width=50%&gt;</div><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1：墨西哥湾的浮标分布。浮标所在的网格为红色的</center><p>为了解决上述两个挑战，我们提出了一个海洋SWH估算框架——Orca。具体来说，首先，由于大型语言模型（Large Language Model, LLM）在不同领域小样本场景下展现出了强大的泛化能力，我们以LLM作为模型主干，通过特定的提示模板和嵌入模块实现LLM的迁移，解决SWH估算中的数据稀疏性问题。其次，为了增强LLM的时空推理能力，我们将基于浮标的数据分割成重叠的补丁，通过一种新的时空编码模块捕捉海洋波浪的时空信息。同时，我们通过正则化项增加数值模型的物理知识对模型估算的约束。Orca整合了数值模型和机器学习模型的优点，弥补了LLM时空推理能力的不足，为海洋SWH估算提供新的方向。</p><p>综上所述，我们在本文中做出以下贡献：</p><ul> <li>Orca是第一个将LLM引入海洋SWH估算的模型。</li> <li>我们设计了一个特定的提示模板和提示嵌入模块，通过有限数据对LLM进行微调，解决了数据稀疏问题。</li> <li>我们提出了一种新的时空感知编码模块，补足了LLM的时空推理能力。</li> <li>进行了大量的实验，证明了Orca的计算效率和准确性。</li></ul><h2 id="2-定义">2. 定义</h2><ul> <li> <p><em>有效波高（SWH）：</em> 在给定区域的一组波中，最高1/3波浪的平均高度。</p> </li> <li> <p><em>基于浮标的数据：</em> $M$个固定在不同位置的浮标在$T$个连续时间间隔中收集到的$F$种观测变量序列，记作$\mathbf{X} \in \mathbb{R}^{F \times M \times T}$。</p> </li> <li> <p><em>基于网格的有效波高（GSWH）：</em> $T$个连续时间间隔内每个网格区域内的平均SWH，记作$\mathbf{Y}\in \mathbb{R}^{K \times J \times T}$，其中$K$和$J$分别表示行数和列数。</p> </li> <li> <p><strong>问题定义</strong> 给定在$T$个连续时间间隔的基于浮标的数据X，估算对应时间的GSWH值$Y$。</p> </li></ul><h2 id="3-方法">3. 方法</h2><p>图2给出了Orca的总体架构。模型一共包含三个模块：提示编码模块、时空感知编码模块、大语言模型。具体来说，设计提示模板，描述大语言模型扮演角色、任务目标、数据格式等信息，为大语言模型在此任务上的微调进行精确的方向定位；将一定时间段的浮标数据作为输入，通过时空感知编码模块学习浮标数据的时空表征；而对于大语言模型本身，冻结包含了大量预训练知识的前馈层和注意力机制模块的参数，只对输入表征的位置编码层的参数进行训练，通过线性层将大语言模型最后的隐藏层的输出映射为预测目标。</p><div align="center"><img src="assets/img/posts/Orca/f2.png" /></div><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图2：Orca总体架构</center><h3 id="31-提示编码模块">3.1 提示编码模块</h3><p>为了指导LLM准确地理解数据，我们将提示符分割成五个不同的组件，如图2所示：ACTOR指定LLM的角色；INFORMATION定义输入数据的维度；TARGET明确说明任务目标；FEATURES指定输入数据的特征，如风向（WDIR）；DATA声明输入数据的类型，确保LLM准确地解释数值，而不是将它们误认为字符串。</p><p>使用LLM的词嵌入层对输入的结构化提示$P={p_1, p_2, \ldots, p_E}$进行编码，得到$\mathbf{P}={\mathbf{p}_1, \mathbf{p}_2, \ldots, \mathbf{p}_E}$。同时，随机生成固定数量的软提示$Q={q_1, q_2, \ldots, q_R}$，并使用预训练的词嵌入层对其进行编码得到$\mathbf{Q}={\mathbf{q}_1, \mathbf{q}_2, \ldots, \mathbf{q}_R}$，然后输入到一个可训练的提示编码器中，来建模不同嵌入之间的依赖关系：</p><div align="center">&lt;img src="assets/img/posts/Orca/f3.png" width=28%&gt;</div><p>最后，我们将$\mathbf{H}<em>q$和$\mathbf{P}$拼接起来，以提高提示对样本的适应性，得到最终的提示$\mathbf{H}</em>{prompt}=[\mathbf{H}_q; \mathbf{P}] \in\mathbb{R}^{(R+E)\times...<a class="read-more" href="./Ocra.html"> read more</a>
+            <p>本文介绍决策智能实验室和河口海岸国重合作的AI4Ocean的工作——海洋有效波高估计。</p><!-- 图片：论文的标题+作者截个图（类似下面这个截图 - 要用CMR后的）![外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传](https://img-home.csdnimg.cn/images/20230724024159.png?origin_url=image.png&pos_id=img-7AD8Ld1I-1721204799122) --><!-- ### Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models --><p><strong>作者：</strong> 李哲， 徐榕荟， 胡吉林， 彭忠， 卢玺， 郭晨娟， 杨彬</p><p><strong>关键词：</strong> 海洋有效波高预测， 大语言模型， 提示微调</p><!-- **论文链接：** **代码链接：** --><p><strong>摘要：</strong> 有效波高（SWH）是海洋科学中的一个重要指标，可以显著反应海洋波浪变化，对全海域SWH进行准确估算是至关重要的。传统数值模型在处理SWH估算任务中虽然具备成熟理论基础，但存在计算效率低下和难以进一步提高的问题。虽然，机器学习技术为解决上述问题提供新的可能性，但由于有限的观测技术和高昂的观测成本，实际观测到的海洋数据的严重稀缺，限制了机器学习模型的潜力。因此，我们提出了一个海洋SWH估算框架（Orca）。具体来说，Orca通过所设计的提示模板实现LLM在SWH估算任务上的迁移，使用一种新的时空感知编码模块增强了传统大语言模型（LLM）的时空推理能力。最终通过大量实验证明了Orca在SWH估算中取得了SOAT且高效的性能。</p><h2 id="1-引言">1. 引言</h2><p>有效波高（Significant Wave Height, SWH）是海洋科学中的一个重要指标，反映了海洋活动的状态。异常波浪会对人类社会和自然环境造成严重破坏，包括生产损失、人员伤亡和生态损害等。因此对海洋SWH的准确估算关系到各类海上活动的安全，如海上导航、渔业运输和海洋能源开发等。</p><p>目前SWH估算的方法主要分为两类：<strong>传统的数值模型</strong>方法和<strong>基于机器学习的方法</strong>。数值模型基于物理学理论构建，通过利用观测数据推演海洋波浪的所有变化实现对全海域SWH的估算。经过多年的研究积累，数值模型已经具备坚实的理论基础和准确性。但对海洋波浪变化的所有可能性的推演往往需要大量计算资源，且难以适应新的影响因素，模型性能过于依赖物理理论。因此，基于机器学习的方法已经成为一种很有前途的替代方法，在SWH估算中提供了更好的准确性和更少的计算时间。然而，同时也面临着两个主要的挑战：一方面，实际观测的SWH数据过于稀疏。由于观测技术、观测环境以及观测成本的限制，海洋中实际部署的观测浮标非常稀少，如图1显示了墨西哥湾浮标的分布。这种稀缺性阻碍了基于机器学习的方法的发展。另一方面，波浪的产生是不同方向多种力的相互作用，因此波的变化具有很强的时空相关性，但目前基于机器学习的方法未能捕捉到如此复杂的关系。</p><div align="center"><img src="assets/img/posts/20240801/f1.png" width="400px" /></div><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1：墨西哥湾的浮标分布。浮标所在的网格为红色的</center><p>为了解决上述两个挑战，我们提出了一个海洋SWH估算框架——Orca。具体来说，首先，由于大型语言模型（Large Language Model, LLM）在不同领域小样本场景下展现出了强大的泛化能力，我们以LLM作为模型主干，通过特定的提示模板和嵌入模块实现LLM的迁移，解决SWH估算中的数据稀疏性问题。其次，为了增强LLM的时空推理能力，我们将基于浮标的数据分割成重叠的补丁，通过一种新的时空编码模块捕捉海洋波浪的时空信息。同时，我们通过正则化项增加数值模型的物理知识对模型估算的约束。Orca整合了数值模型和机器学习模型的优点，弥补了LLM时空推理能力的不足，为海洋SWH估算提供新的方向。</p><p>综上所述，我们在本文中做出以下贡献：</p><ul> <li>Orca是第一个将LLM引入海洋SWH估算的模型。</li> <li>我们设计了一个特定的提示模板和提示嵌入模块，通过有限数据对LLM进行微调，解决了数据稀疏问题。</li> <li>我们提出了一种新的时空感知编码模块，补足了LLM的时空推理能力。</li> <li>进行了大量的实验，证明了Orca的计算效率和准确性。</li></ul><h2 id="2-定义">2. 定义</h2><ul> <li> <p><em>有效波高（SWH）：</em> 在给定区域的一组波中，最高1/3波浪的平均高度。</p> </li> <li> <p><em>基于浮标的数据：</em> $M$个固定在不同位置的浮标在$T$个连续时间间隔中收集到的$F$种观测变量序列，记作$\mathbf{X} \in \mathbb{R}^{F \times M \times T}$。</p> </li> <li> <p><em>基于网格的有效波高（GSWH）：</em> $T$个连续时间间隔内每个网格区域内的平均SWH，记作$\mathbf{Y}\in \mathbb{R}^{K \times J \times T}$，其中$K$和$J$分别表示行数和列数。</p> </li> <li> <p><strong>问题定义</strong> 给定在$T$个连续时间间隔的基于浮标的数据X，估算对应时间的GSWH值$Y$。</p> </li></ul><h2 id="3-方法">3. 方法</h2><p>图2给出了Orca的总体架构。模型一共包含三个模块：提示编码模块、时空感知编码模块、大语言模型。具体来说，设计提示模板，描述大语言模型扮演角色、任务目标、数据格式等信息，为大语言模型在此任务上的微调进行精确的方向定位；将一定时间段的浮标数据作为输入，通过时空感知编码模块学习浮标数据的时空表征；而对于大语言模型本身，冻结包含了大量预训练知识的前馈层和注意力机制模块的参数，只对输入表征的位置编码层的参数进行训练，通过线性层将大语言模型最后的隐藏层的输出映射为预测目标。</p><div align="center"><img src="assets/img/posts/20240801/f2.png" /></div><center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图2：Orca总体架构</center><h3 id="31-提示编码模块">3.1 提示编码模块</h3><p>为了指导LLM准确地理解数据，我们将提示符分割成五个不同的组件，如图2所示：ACTOR指定LLM的角色；INFORMATION定义输入数据的维度；TARGET明确说明任务目标；FEATURES指定输入数据的特征，如风向（WDIR）；DATA声明输入数据的类型，确保LLM准确地解释数值，而不是将它们误认为字符串。</p><p>使用LLM的词嵌入层对输入的结构化提示 $P={p_1, p_2, \ldots, p_E}$ 进行编码，得到 $\mathbf{P}={\mathbf{p}_1, \mathbf{p}_2, \ldots, \mathbf{p}_E}$ 。同时，随机生成固定数量的软提示 $Q={q_1, q_2, \ldots, q_R}$...<a class="read-more" href="./Ocra.html"> read more</a>
         </div>
   </div>
 </section>
@@ -336,13 +336,15 @@
 <meta itemprop="description" content="时空感知的大语言模型在海洋显著波高估计中的应用">
 <meta itemprop="datePublished" content="2024-08-01T00:00:00+08:00">
 
+<meta itemprop="paper" content="https://doi.org/10.1145/3627673.3679973"><a href="https://doi.org/10.1145/3627673.3679973" itemprop="paper">[paper]</a>
+
     <div class="page-image">
       <div class="cover-image" style="background: url('./assets/img/posts/20240801/f2.png') center no-repeat; background-size: cover;"></div>
     </div>
     <div class="wrapper">
       <div class="page-content">
         <div class="header-page">
-          <h1 class="page-title">Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models</h1>
+          <h2 class="page-title">Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models</h2>
           
 
   <span class = "post-page-meta">
@@ -366,7 +368,7 @@
     
     <span class="page_meta-readtime">
       
-        1 minute read
+        less than 1 minute read
       
     </span>
   
@@ -415,7 +417,7 @@
 <!-- 图片：论文的标题+作者截个图（类似下面这个截图 - 要用CMR后的）
 ![外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传](https://img-home.csdnimg.cn/images/20230724024159.png?origin_url=image.png&pos_id=img-7AD8Ld1I-1721204799122) -->
 
-<h3 id="ocean-significant-wave-height-estimation-with-spatio-temporally-aware-large-language-models">Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models</h3>
+<!-- ### Ocean Significant Wave Height Estimation with Spatio-temporally Aware Large Language Models -->
 
 <p><strong>作者：</strong> 李哲， 徐榕荟， 胡吉林， 彭忠， 卢玺， 郭晨娟， 杨彬</p>
 
@@ -432,7 +434,7 @@
 
 <p>目前SWH估算的方法主要分为两类：<strong>传统的数值模型</strong>方法和<strong>基于机器学习的方法</strong>。数值模型基于物理学理论构建，通过利用观测数据推演海洋波浪的所有变化实现对全海域SWH的估算。经过多年的研究积累，数值模型已经具备坚实的理论基础和准确性。但对海洋波浪变化的所有可能性的推演往往需要大量计算资源，且难以适应新的影响因素，模型性能过于依赖物理理论。因此，基于机器学习的方法已经成为一种很有前途的替代方法，在SWH估算中提供了更好的准确性和更少的计算时间。然而，同时也面临着两个主要的挑战：一方面，实际观测的SWH数据过于稀疏。由于观测技术、观测环境以及观测成本的限制，海洋中实际部署的观测浮标非常稀少，如图1显示了墨西哥湾浮标的分布。这种稀缺性阻碍了基于机器学习的方法的发展。另一方面，波浪的产生是不同方向多种力的相互作用，因此波的变化具有很强的时空相关性，但目前基于机器学习的方法未能捕捉到如此复杂的关系。</p>
 
-<div align="center">&lt;img src="assets/img/posts/Orca/f1.png" width=50%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/f1.png" width="400px" /></div>
 <center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1：墨西哥湾的浮标分布。浮标所在的网格为红色的</center>
 
 <p>为了解决上述两个挑战，我们提出了一个海洋SWH估算框架——Orca。具体来说，首先，由于大型语言模型（Large Language Model, LLM）在不同领域小样本场景下展现出了强大的泛化能力，我们以LLM作为模型主干，通过特定的提示模板和嵌入模块实现LLM的迁移，解决SWH估算中的数据稀疏性问题。其次，为了增强LLM的时空推理能力，我们将基于浮标的数据分割成重叠的补丁，通过一种新的时空编码模块捕捉海洋波浪的时空信息。同时，我们通过正则化项增加数值模型的物理知识对模型估算的约束。Orca整合了数值模型和机器学习模型的优点，弥补了LLM时空推理能力的不足，为海洋SWH估算提供新的方向。</p>
@@ -463,46 +465,51 @@
 
 <h2 id="3-方法">3. 方法</h2>
 <p>图2给出了Orca的总体架构。模型一共包含三个模块：提示编码模块、时空感知编码模块、大语言模型。具体来说，设计提示模板，描述大语言模型扮演角色、任务目标、数据格式等信息，为大语言模型在此任务上的微调进行精确的方向定位；将一定时间段的浮标数据作为输入，通过时空感知编码模块学习浮标数据的时空表征；而对于大语言模型本身，冻结包含了大量预训练知识的前馈层和注意力机制模块的参数，只对输入表征的位置编码层的参数进行训练，通过线性层将大语言模型最后的隐藏层的输出映射为预测目标。</p>
-<div align="center"><img src="assets/img/posts/Orca/f2.png" /></div>
+<div align="center"><img src="assets/img/posts/20240801/f2.png" /></div>
 <center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图2：Orca总体架构</center>
 
 <h3 id="31-提示编码模块">3.1 提示编码模块</h3>
 <p>为了指导LLM准确地理解数据，我们将提示符分割成五个不同的组件，如图2所示：ACTOR指定LLM的角色；INFORMATION定义输入数据的维度；TARGET明确说明任务目标；FEATURES指定输入数据的特征，如风向（WDIR）；DATA声明输入数据的类型，确保LLM准确地解释数值，而不是将它们误认为字符串。</p>
 
-<p>使用LLM的词嵌入层对输入的结构化提示$P={p_1, p_2, \ldots, p_E}$进行编码，得到$\mathbf{P}={\mathbf{p}_1, \mathbf{p}_2, \ldots, \mathbf{p}_E}$。同时，随机生成固定数量的软提示$Q={q_1, q_2, \ldots, q_R}$，并使用预训练的词嵌入层对其进行编码得到$\mathbf{Q}={\mathbf{q}_1, \mathbf{q}_2, \ldots, \mathbf{q}_R}$，然后输入到一个可训练的提示编码器中，来建模不同嵌入之间的依赖关系：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/f3.png" width=28%&gt;</div>
+<p>使用LLM的词嵌入层对输入的结构化提示 $P={p_1, p_2, \ldots, p_E}$ 进行编码，得到 $\mathbf{P}={\mathbf{p}_1, \mathbf{p}_2, \ldots, \mathbf{p}_E}$ 。同时，随机生成固定数量的软提示 $Q={q_1, q_2, \ldots, q_R}$ ，并使用预训练的词嵌入层对其进行编码得到 $\mathbf{Q}={\mathbf{q}_1, \mathbf{q}_2, \ldots, \mathbf{q}_R}$ ，然后输入到一个可训练的提示编码器中，来建模不同嵌入之间的依赖关系：</p>
+<div align="center"><img src="assets/img/posts/20240801/f3.png" width="400px" /></div>
 
-<p>最后，我们将$\mathbf{H}<em>q$和$\mathbf{P}$拼接起来，以提高提示对样本的适应性，得到最终的提示$\mathbf{H}</em>{prompt}=[\mathbf{H}_q; \mathbf{P}] \in\mathbb{R}^{(R+E)\times D}$。</p>
+<p>最后，我们将
+$\mathbf{H}<em>q$
+和
+$\mathbf{P}$
+拼接起来，以提高提示对样本的适应性，得到最终的提示
+$\mathbf{H}</em>{prompt}=[\mathbf{H}_q; \mathbf{P}] \in\mathbb{R}^{(R+E)\times D}$。</p>
 
 <h3 id="32-时空感知编码模块">3.2 时空感知编码模块</h3>
 <p><strong>空间编码</strong> 我们把指定的矩形海域划分为二维网格，将浮标分配到相应的网格位置，记为$\mathbf{G}={(\mathrm{u}<em>i, \mathrm{v}_i)}</em>{i=1}^\mathrm{M}$。为了有效地表示多维空间内的空间关系，我们使用z阶曲线将浮标坐标映射到一维二进制嵌入：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq2.png" width=12%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/eq2.png" width="130px" /></div>
 
 <p>随后，将$\mathbf{Z}$输入到一个全连接层，生成浮标的空间位置嵌入：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq3.png" width=18%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/eq3.png" width="200px" /></div>
 
-<p><strong>时间编码</strong> 将浮标的观测数据$\mathbf{X}$分割为重叠的补丁$\mathbf{C}={\mathbf{X}<em>{(i)}}</em>{i=1}^{S}$，利用一个全连接层对齐$\mathbf{C}$与LLM的语义空间，表述为：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq4.png" width=19%&gt;</div>
+<p><strong>时间编码</strong> 将浮标的观测数据 $\mathbf{X}$ 分割为重叠的补丁 $\mathbf{C}={\mathbf{X}<em>{(i)}}</em>{i=1}^{S}$ ，利用一个全连接层对齐 $\mathbf{C}$ 与LLM的语义空间，表述为：</p>
+<div align="center"><img src="assets/img/posts/20240801/eq4.png" width="200px" /></div>
 
 <p>我们将上述的三类表征拼接起来，获得最终的输入表征$\mathbf{H}<em>{input}=[\mathbf{H}</em>{prompt}; \mathbf{H}<em>{loc}; \mathbf{H}</em>{temp}] \in\mathbb{R}^\mathrm{ I \times F \times M \times D}$</p>
 
 <h3 id="33-llm微调">3.3 LLM微调</h3>
 <p>为了利用LLM在预训练中所学到的知识，我们只微调LLM的位置编码而冻结其他参数。将$\mathbf{H}_{input}$输入LLM，LLM最后一个隐藏层的输出为：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq5.png" width=18%&gt;</div>
+<div align="center">&lt;img src="assets/img/posts/20240801/eq5.png" width=200px</div>
 
 <p>我们在$\mathbf{H}_{LLM}$上执行平均池化来聚合特征维度：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq6.png" width=20%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/eq6.png" width="200px" /></div>
 
 <p>将$\mathbf{H}_{pool}$展平为一个($I \times M \times D$)维嵌入，然后利用一个全连接层和一个重塑函数来得到估算的GSWH值：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq7.png" width=22%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/eq7.png" width="200px" /></div>
 
 <h3 id="34-优化">3.4 优化</h3>
 <p>我们最小化从浮标观测到的SWH值和估算的GSWH值之间的差异。在形式上，损失函数为：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq8.png" width=23%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/eq8.png" width="200px" /></div>
 <p>为了指导模型遵循物理原理，我们利用来自数值模型GWD的数据作为一个正则化项：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq9.png" width=25%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/eq9.png" width="200px" /></div>
 <p>最后，优化目标表示为：</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/eq10.png" width=13%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/eq10.png" width="130px" /></div>
 
 <h2 id="4-实验">4. 实验</h2>
 <h3 id="41-实验设置">4.1 实验设置</h3>
@@ -529,19 +536,19 @@
     <p>表1报告了Orca以及四个基线模型在NDBC数据集上的性能结果。</p>
   </li>
 </ul>
-<div align="center">&lt;img src="assets/img/posts/Orca/t.png" width=45%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/t.png" width="400px" /></div>
 <center style="font-size:14px;color:#C0C0C0;text-decoration:underline">表1：不同模型的性能比较。最佳表现用粗体突出显示</center>
 
 <p>图3报告了Orca在删除不同模块组件后模型变体的性能结果。</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/f3.png" width=45%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/f3.png" width="400px" /></div>
 <center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图3：不同模型变体的性能比较</center>
 
 <p>图4报告了所有基线模型在浮标42040上估算出的连续8个时间间隔的SWH。</p>
-<div align="center">&lt;img src="assets/img/posts/Orca/f4.png" width=45%&gt;&lt;/ditv&gt;
+<div align="center"><img src="assets/img/posts/20240801/f4.png" width="400px" />&lt;/ditv&gt;
 <center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图4：浮标42040连续8个时间间隔的SWH</center>
 
 图5(a)，(b)分别显示了Orca以及数值模型GWD在某一时刻对墨西哥海湾全部网格GSHW估算的热图。
-<div align="center">&lt;img src="assets/img/posts/Orca/f5.png" width=60%&gt;</div>
+<div align="center"><img src="assets/img/posts/20240801/f5.png" /></div>
 <center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图5：目标海域在固定时刻GSWH分布的热图。颜色越深，GSWH的值就越大</center>
 
 <div align="left">
@@ -666,7 +673,7 @@
     
     <p class="page_meta-readtime">
       
-        1 minute read
+        less than 1 minute read
       
     </p>
   
