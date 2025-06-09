@@ -294,7 +294,7 @@
 <div class="layout-container">
   <!-- Left side - 30% fixed -->
   <div class="left-content">
-    <div style="margin: 50px auto 0px; padding-top: 20px; padding-right: 40px;">
+    <div style="margin: 50px auto 0px; padding-top: 20px;">
       <!-- Add your left side content here -->
        <div style="margin: 0 auto 0px; width: 150px;">
         <img src="./assets/img/Myself.jpg" 
@@ -468,21 +468,22 @@
 <style>
   .layout-container {
     display: flex;
-    flex-direction: row; /* 默认左右布局 */
+    flex-direction: row;
     justify-content: space-between;
     padding-top: 70px;
+    position: relative;
   }
   
-  /* 左侧固定宽度，右侧自适应 */
-  .layout-container left-content {
-    width: 40%;
-    /* margin-right: 70%; */
-    position: fixed;
+  .left-content {
+    width: 30%;
+    position: sticky;
+    top: 70px;
+    height: fit-content;
+    padding-right: 20px;
   }
   
-  .layout-container right-content {
-    width: 60%;
-    margin-left: 40%; /* 为了避开 fixed 的 left-content */
+  .right-content {
+    width: 70%;
   }
   
   /* 手机或小屏幕设备：上下排列 */
@@ -492,19 +493,18 @@
     }
   
     .left-content {
-      width: 100% !important;
-      position: relative !important;
-      margin-bottom: 20px !important;
+      width: 100%;
+      position: relative;
+      top: 0;
+      padding-right: 0;
+      margin-bottom: 20px;
     }
   
     .right-content {
-      width: 100% !important;
-      margin-left: 0 !important;
+      width: 100%;
     }
   }
-  </style>
-  
-
+</style>
 
     <!-- <div class="search-box">
   <div class="wrapper">
